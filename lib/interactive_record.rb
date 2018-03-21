@@ -18,6 +18,7 @@ class InteractiveRecord
           table_info.each do |row|
             column_names << row["name"]
           end
+          pry
           column_names.compact
         end
 
@@ -33,6 +34,7 @@ class InteractiveRecord
   end
 
   def col_names_for_insert
+    binding.pry
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
@@ -56,6 +58,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
+
     sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
     DB[:conn].execute(sql, attribute, attribute)
   end
