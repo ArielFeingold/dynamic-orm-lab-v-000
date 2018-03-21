@@ -57,7 +57,6 @@ class InteractiveRecord
 
   def self.find_by(hash)
     array = hash.to_a.flatten
-    binding.pry
     sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
     DB[:conn].execute(sql, array[0].to_s, array[1])
   end
