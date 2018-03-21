@@ -22,6 +22,17 @@ class InteractiveRecord
       binding.pry
     end
 
+    self.column_names.each do |col_name|
+    test = attr_accessor col_name.to_sym
+    binding.pry
+  end
+
+  def initialize(options={})
+  options.each do |property, value|
+    self.send("#{property}=", value)
+  end
+
+
     def initialize(options = {})
 
     end
