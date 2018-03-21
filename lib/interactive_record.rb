@@ -54,8 +54,8 @@ class InteractiveRecord
       DB[:conn].execute(sql)
     end
 
-    def initialize
-      
+    def initialize(options = {})
+
     end
 
 end
