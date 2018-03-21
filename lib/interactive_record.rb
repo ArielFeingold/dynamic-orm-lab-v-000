@@ -19,6 +19,7 @@ class InteractiveRecord
         column_names << row["name"]
       end
       column_names.compact
+      binding.pry
     end
 
     def initialize(options = {})
